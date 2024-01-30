@@ -28,9 +28,6 @@ struct ContentView: View {
     @State private var intCheck = 0
 
 
-
-
-    
     var body: some View {
         Form {
             Section{
@@ -51,7 +48,10 @@ struct ContentView: View {
                     TextField("Unit", value: $newIngredientUnit, formatter: NumberFormatter())
                     TextField("Category", text: $newIngredientCategory)
                     DatePicker("Expiry Date", selection: $newIngredientExpiryDate)
-        }
+                    Button("Submit", action: {
+                        allIngredients.ingredients.append(Ingredients(name: newIngredientName, quantity: newIngredientQuantity, unit: newIngredientUnit, category: newIngredientCategory, expiryDate: newIngredientExpiryDate))
+                    })
+                }
             }
         }
     }
