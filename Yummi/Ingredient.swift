@@ -14,5 +14,13 @@ struct Ingredients {
     var category: String
     var expiryDate: Date
     
-
+    func displayInfo() -> String {
+        return """
+        Name: \(self.name)
+        Quantity: \(self.quantity)
+        Unit: \(self.unit)
+        Category: \(self.category)
+        Expiry Date: \(self.expiryDate.formatted(date: .abbreviated, time: .shortened))
+        """
+    }
 }

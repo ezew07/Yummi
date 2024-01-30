@@ -16,6 +16,7 @@
 		D924FC462B5FEDD3003F2182 /* YummiUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D924FC452B5FEDD3003F2182 /* YummiUITestsLaunchTests.swift */; };
 		D924FC532B5FEF48003F2182 /* Ingredient.swift in Sources */ = {isa = PBXBuildFile; fileRef = D924FC522B5FEF48003F2182 /* Ingredient.swift */; };
 		D924FC542B5FEF48003F2182 /* Ingredient.swift in Sources */ = {isa = PBXBuildFile; fileRef = D924FC522B5FEF48003F2182 /* Ingredient.swift */; };
+		F005AF632B67B76C00AF2776 /* AllIngredients.swift in Sources */ = {isa = PBXBuildFile; fileRef = F005AF622B67B76C00AF2776 /* AllIngredients.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,7 @@
 		D924FC432B5FEDD3003F2182 /* YummiUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YummiUITests.swift; sourceTree = "<group>"; };
 		D924FC452B5FEDD3003F2182 /* YummiUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YummiUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		D924FC522B5FEF48003F2182 /* Ingredient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ingredient.swift; sourceTree = "<group>"; };
+		F005AF622B67B76C00AF2776 /* AllIngredients.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllIngredients.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +104,7 @@
 				D924FC2C2B5FEDD2003F2182 /* Assets.xcassets */,
 				D924FC2E2B5FEDD2003F2182 /* Preview Content */,
 				D924FC522B5FEF48003F2182 /* Ingredient.swift */,
+				F005AF622B67B76C00AF2776 /* AllIngredients.swift */,
 			);
 			path = Yummi;
 			sourceTree = "<group>";
@@ -261,6 +264,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F005AF632B67B76C00AF2776 /* AllIngredients.swift in Sources */,
 				D924FC2B2B5FEDD1003F2182 /* ContentView.swift in Sources */,
 				D924FC292B5FEDD1003F2182 /* YummiApp.swift in Sources */,
 				D924FC532B5FEF48003F2182 /* Ingredient.swift in Sources */,
