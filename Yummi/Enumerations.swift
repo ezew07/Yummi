@@ -7,9 +7,8 @@
 
 import Foundation
 
-enum Categories: String {
+enum Category: String {
     case Confectionary = "Confectionary"
     case Carbohydrate = "Carbohydrate"
     case Proteins = "Proteins"
 }
-

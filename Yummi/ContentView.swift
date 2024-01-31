@@ -23,34 +23,34 @@ struct ContentView: View {
     @State private var newIngredientName = ""
     @State private var newIngredientQuantity = Int()
     @State private var newIngredientUnit = Int()
-    @State private var newIngredientCategory = ""
+    @State private var newIngredientCategory: Category
     @State private var newIngredientExpiryDate = Date()
     @State private var intCheck = 0
 
 
     var body: some View {
         Form {
-            Section{
+            Section("Information"){
                 VStack(alignment: .leading, spacing: 20) {
-                    Text("\(allIngredients.ingredients[selectedIngredient].displayInfo())")
+                    Text("\(allIngredients.ingredients[selectedIngredient].displayInfo)")
                     Button("Next ingredient", action: {
                         selectedIngredient += 1
                     })
                 }
                 .padding()
             }
-            Section{
-                Text("Create a new ingredient")
-                    .bold()
+            Section("Create a new ingredient"){
                 Section{
                     TextField("Ingredient name", text: $newIngredientName)
                     TextField("Quantity", value: $newIngredientQuantity, formatter: NumberFormatter())
                     TextField("Unit", value: $newIngredientUnit, formatter: NumberFormatter())
-                    TextField("Category", text: $newIngredientCategory)
+                    TextField("Category", value: $newIngredientCategory, formatter: for)
                     DatePicker("Expiry Date", selection: $newIngredientExpiryDate)
-                    Button("Submit", action: {
+                    Button(action: {
                         allIngredients.ingredients.append(Ingredients(name: newIngredientName, quantity: newIngredientQuantity, unit: newIngredientUnit, category: newIngredientCategory, expiryDate: newIngredientExpiryDate))
-                    })
+                    }) {
+                        Label("Make Ingredient", systemImage: "plus.square.on.square")
+                    }
                 }
             }
         }

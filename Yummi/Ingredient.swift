@@ -11,15 +11,15 @@ struct Ingredients {
     let name: String
     var quantity: Int
     var unit: Int
-    var category: String
+    var category: Category
     var expiryDate: Date
     
-    func displayInfo() -> String {
+    var displayInfo: String {
         return """
         Name: \(self.name)
         Quantity: \(self.quantity)
         Unit: \(self.unit)
-        Category: \(self.category)
+        Category: \(self.category.rawValue)
         Expiry Date: \(self.expiryDate.formatted(date: .abbreviated, time: .shortened))
         """
     }
