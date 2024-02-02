@@ -17,6 +17,7 @@
 		D924FC532B5FEF48003F2182 /* Ingredient.swift in Sources */ = {isa = PBXBuildFile; fileRef = D924FC522B5FEF48003F2182 /* Ingredient.swift */; };
 		D924FC542B5FEF48003F2182 /* Ingredient.swift in Sources */ = {isa = PBXBuildFile; fileRef = D924FC522B5FEF48003F2182 /* Ingredient.swift */; };
 		D92BBFA72B692D6800ACFFC3 /* Enumerations.swift in Sources */ = {isa = PBXBuildFile; fileRef = D92BBFA62B692D6800ACFFC3 /* Enumerations.swift */; };
+		D9F6D9F52B6D06CF001D94F6 /* Recipie.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9F6D9F42B6D06CF001D94F6 /* Recipie.swift */; };
 		F005AF632B67B76C00AF2776 /* AllIngredients.swift in Sources */ = {isa = PBXBuildFile; fileRef = F005AF622B67B76C00AF2776 /* AllIngredients.swift */; };
 /* End PBXBuildFile section */
 
@@ -50,6 +51,7 @@
 		D924FC452B5FEDD3003F2182 /* YummiUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YummiUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		D924FC522B5FEF48003F2182 /* Ingredient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ingredient.swift; sourceTree = "<group>"; };
 		D92BBFA62B692D6800ACFFC3 /* Enumerations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enumerations.swift; sourceTree = "<group>"; };
+		D9F6D9F42B6D06CF001D94F6 /* Recipie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recipie.swift; sourceTree = "<group>"; };
 		F005AF622B67B76C00AF2776 /* AllIngredients.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllIngredients.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -108,6 +110,7 @@
 				D924FC522B5FEF48003F2182 /* Ingredient.swift */,
 				D92BBFA62B692D6800ACFFC3 /* Enumerations.swift */,
 				F005AF622B67B76C00AF2776 /* AllIngredients.swift */,
+				D9F6D9F42B6D06CF001D94F6 /* Recipie.swift */,
 			);
 			path = Yummi;
 			sourceTree = "<group>";
@@ -272,6 +275,7 @@
 				D924FC292B5FEDD1003F2182 /* YummiApp.swift in Sources */,
 				D92BBFA72B692D6800ACFFC3 /* Enumerations.swift in Sources */,
 				D924FC532B5FEF48003F2182 /* Ingredient.swift in Sources */,
+				D9F6D9F52B6D06CF001D94F6 /* Recipie.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -10,7 +10,7 @@ import Foundation
 struct Ingredients {
     let name: String
     var quantity: Int
-    var unit: Int
+    var unit: String
     var category: Category
     var expiryDate: Date
     

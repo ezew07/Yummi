@@ -22,8 +22,8 @@ struct ContentView: View {
     }
     @State private var newIngredientName = ""
     @State private var newIngredientQuantity = Int()
-    @State private var newIngredientUnit = Int()
-    @State private var newIngredientCategory: Category
+    @State private var newIngredientUnit = String()
+    @State private var newIngredientCategory: Category  = .defaultCategory
     @State private var newIngredientExpiryDate = Date()
     @State private var intCheck = 0
 
@@ -42,9 +42,17 @@ struct ContentView: View {
             Section("Create a new ingredient"){
                 Section{
                     TextField("Ingredient name", text: $newIngredientName)
-                    TextField("Quantity", value: $newIngredientQuantity, formatter: NumberFormatter())
-                    TextField("Unit", value: $newIngredientUnit, formatter: NumberFormatter())
-                    TextField("Category", value: $newIngredientCategory, formatter: for)
+                    HStack{
+                        TextField("Quantity", value: $newIngredientQuantity, formatter: NumberFormatter())
+                            .keyboardType(.numberPad)
+                        TextField("Unit", value: $newIngredientUnit, formatter: NumberFormatter())
+                    }
+                    Picker("Category", selection: $newIngredientCategory, content: {
+                        ForEach(Category.allCases, id: \.self){ newIngredientCategory in
+                            Text(newIngredientCategory.rawValue)
+                            
+                        }
+                    })
                     DatePicker("Expiry Date", selection: $newIngredientExpiryDate)
                     Button(action: {
                         allIngredients.ingredients.append(Ingredients(name: newIngredientName, quantity: newIngredientQuantity, unit: newIngredientUnit, category: newIngredientCategory, expiryDate: newIngredientExpiryDate))

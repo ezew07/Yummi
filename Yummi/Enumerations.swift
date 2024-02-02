@@ -7,8 +7,10 @@
 
 import Foundation
 
-enum Category: String {
+enum Category: String, CaseIterable {
+    case defaultCategory = "Choose a category"
     case Confectionary = "Confectionary"
     case Carbohydrate = "Carbohydrate"
     case Proteins = "Proteins"
+    case Drinks = "Drinks"
 }
