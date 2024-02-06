@@ -12,10 +12,11 @@ func getDate(year: Int, month: Int, day: Int, hour: Int, minute: Int) -> Date{
 }
 
 struct ContentView: View {
-    @State private var allIngredients = AllIngredients()
+    @State var examples: [Ingredients]
+    
     @State private var selectedIngredient = 0 {
         didSet{
-            if selectedIngredient > allIngredients.ingredients.count - 1{
+            if selectedIngredient > examples.count - 1{
                 selectedIngredient = 0
             }
         }
@@ -32,7 +33,7 @@ struct ContentView: View {
         Form {
             Section("Information"){
                 VStack(alignment: .leading, spacing: 20) {
-                    Text("\(allIngredients.ingredients[selectedIngredient].displayInfo)")
+                    Text("\(examples[selectedIngredient].displayInfo)")
                     Button("Next ingredient", action: {
                         selectedIngredient += 1
                     })
@@ -55,7 +56,7 @@ struct ContentView: View {
                     })
                     DatePicker("Expiry Date", selection: $newIngredientExpiryDate)
                     Button(action: {
-                        allIngredients.ingredients.append(Ingredients(name: newIngredientName, quantity: newIngredientQuantity, unit: newIngredientUnit, category: newIngredientCategory, expiryDate: newIngredientExpiryDate))
+                        examples.append(Ingredients(name: newIngredientName, quantity: newIngredientQuantity, unit: newIngredientUnit, category: newIngredientCategory, expiryDate: newIngredientExpiryDate))
                     }) {
                         Label("Make Ingredient", systemImage: "plus.square.on.square")
                     }
@@ -65,5 +66,5 @@ struct ContentView: View {
     }
 }
 #Preview {
-    ContentView()
+    ContentView(examples: Ingredients.examples)
 }

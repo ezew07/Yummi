@@ -6,3 +6,10 @@
 //
 
 import Foundation
+
+struct Recipies {
+    let name: String
+    let ingredients: Ingredients
+    var isFavourite: Bool
+    var rating: Int
+}
