@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		D90E3BFF2B7267B200DDD8D9 /* Recipies.swift in Sources */ = {isa = PBXBuildFile; fileRef = D90E3BFE2B7267B200DDD8D9 /* Recipies.swift */; };
 		D924FC292B5FEDD1003F2182 /* YummiApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D924FC282B5FEDD1003F2182 /* YummiApp.swift */; };
 		D924FC2B2B5FEDD1003F2182 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D924FC2A2B5FEDD1003F2182 /* ContentView.swift */; };
 		D924FC2D2B5FEDD2003F2182 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D924FC2C2B5FEDD2003F2182 /* Assets.xcassets */; };
@@ -19,6 +18,8 @@
 		D924FC542B5FEF48003F2182 /* Ingredient.swift in Sources */ = {isa = PBXBuildFile; fileRef = D924FC522B5FEF48003F2182 /* Ingredient.swift */; };
 		D92BBFA72B692D6800ACFFC3 /* Enumerations.swift in Sources */ = {isa = PBXBuildFile; fileRef = D92BBFA62B692D6800ACFFC3 /* Enumerations.swift */; };
 		D9A5F90B2B73F16A00DE9EF6 /* RecipieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9A5F90A2B73F16A00DE9EF6 /* RecipieView.swift */; };
+		F0025E012B80E28C00967D6C /* IngredientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0025E002B80E28C00967D6C /* IngredientView.swift */; };
+		F073F9462B78F58E0087CC4C /* Recipie.swift in Sources */ = {isa = PBXBuildFile; fileRef = F073F9452B78F58E0087CC4C /* Recipie.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,7 +40,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		D90E3BFE2B7267B200DDD8D9 /* Recipies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recipies.swift; sourceTree = "<group>"; };
 		D924FC252B5FEDD1003F2182 /* Yummi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Yummi.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D924FC282B5FEDD1003F2182 /* YummiApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YummiApp.swift; sourceTree = "<group>"; };
 		D924FC2A2B5FEDD1003F2182 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -53,6 +53,8 @@
 		D924FC522B5FEF48003F2182 /* Ingredient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ingredient.swift; sourceTree = "<group>"; };
 		D92BBFA62B692D6800ACFFC3 /* Enumerations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enumerations.swift; sourceTree = "<group>"; };
 		D9A5F90A2B73F16A00DE9EF6 /* RecipieView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipieView.swift; sourceTree = "<group>"; };
+		F0025E002B80E28C00967D6C /* IngredientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientView.swift; sourceTree = "<group>"; };
+		F073F9452B78F58E0087CC4C /* Recipie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recipie.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -142,7 +144,7 @@
 			children = (
 				D924FC522B5FEF48003F2182 /* Ingredient.swift */,
 				D92BBFA62B692D6800ACFFC3 /* Enumerations.swift */,
-				D90E3BFE2B7267B200DDD8D9 /* Recipies.swift */,
+				F073F9452B78F58E0087CC4C /* Recipie.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -152,6 +154,7 @@
 			children = (
 				D924FC2A2B5FEDD1003F2182 /* ContentView.swift */,
 				D9A5F90A2B73F16A00DE9EF6 /* RecipieView.swift */,
+				F0025E002B80E28C00967D6C /* IngredientView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -287,11 +290,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				D924FC2B2B5FEDD1003F2182 /* ContentView.swift in Sources */,
-				D90E3BFF2B7267B200DDD8D9 /* Recipies.swift in Sources */,
 				D9A5F90B2B73F16A00DE9EF6 /* RecipieView.swift in Sources */,
 				D924FC292B5FEDD1003F2182 /* YummiApp.swift in Sources */,
 				D92BBFA72B692D6800ACFFC3 /* Enumerations.swift in Sources */,
+				F0025E012B80E28C00967D6C /* IngredientView.swift in Sources */,
 				D924FC532B5FEF48003F2182 /* Ingredient.swift in Sources */,
+				F073F9462B78F58E0087CC4C /* Recipie.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
