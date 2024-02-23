@@ -26,11 +26,19 @@ struct IndividualRecipie: View {
                     Text("\(recipie.displayInfo)")
                 }
                 Section("Info"){
-                    Text("Rating: \(recipie.rating)/5")
+                    HStack{
+                        Stepper(value: $recipie.rating, in: 0...5){
+                            Text("Rating: \(recipie.rating)/5")
+                        }
+                            .onChange(of: recipie.rating) {
+                            state.recipies[
+                            findRecipieIndex(in: state.recipies, name: recipie.name)] = recipie
+                        }
+                    }
                     Toggle(isOn: $recipie.isFavourite){
                         Text("Favourite")
                     }
-                    .onChange(of: recipie.isFavourite) { oldValue, newValue in
+                    .onChange(of: recipie.isFavourite) {
                         state.recipies[
                         findRecipieIndex(in: state.recipies, name: recipie.name)] = recipie
                     }
