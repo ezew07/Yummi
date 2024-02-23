@@ -26,6 +26,9 @@ struct RecipieView: View {
                         Text("\(recipies.name)")
                     }
                 }
+                .onDelete(perform: { indexSet in
+                    state.recipies.remove(atOffsets: indexSet)
+                })
             }
             .navigationTitle("Recipes")
         }
