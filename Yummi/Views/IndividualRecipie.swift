@@ -8,11 +8,28 @@
 import SwiftUI
 
 struct IndividualRecipie: View {
+    var recipie: Recipie
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        NavigationStack{
+            Form{
+                Section("Image"){
+                    AsyncImage(url: URL(string: recipie.imageURL)){ image in
+                        image.resizable().aspectRatio(contentMode: .fit)
+                        
+                    } placeholder: {
+                        ProgressView()
+                    }
+                }
+                Section("Ingredients"){
+                    Text("\(recipie.displayInfo)")
+                }
+            }
+            .navigationTitle(recipie.name)
+        }
     }
 }
 
 #Preview {
-    IndividualRecipie()
+    IndividualRecipie(recipie: Recipie.exampleRecipies[0])
 }
