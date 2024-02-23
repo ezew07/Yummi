@@ -21,10 +21,9 @@ struct ContentView: View {
                     Image(systemName: "fork.knife")
                         .resizable()
                         .frame(width: 20, height: 20)
-                        .foregroundColor(selectedTab == .ingredientView ? .blue : .gray)
                     Text("Ingredients")
-                        .foregroundStyle(.black)
                 }
+                    .foregroundColor(selectedTab == .ingredientView ? .blue : .gray)
             })
             Button(action: {
                 selectedTab = .recipieView
@@ -33,11 +32,9 @@ struct ContentView: View {
                     Image(systemName: "book.fill")
                         .resizable()
                         .frame(width: 20, height: 20)
-                        .foregroundColor(selectedTab == .recipieView ? .blue : .gray)
                     Text("Recipies")
-                        .foregroundStyle(.black)
-
                 }
+                    .foregroundColor(selectedTab == .recipieView ? .blue : .gray)
             })
 
         }
