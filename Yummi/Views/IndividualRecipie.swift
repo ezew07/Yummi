@@ -24,6 +24,9 @@ struct IndividualRecipie: View {
                 Section("Ingredients"){
                     Text("\(recipie.displayInfo)")
                 }
+                Section("Info"){
+                    Text("Rating: \(recipie.rating)/5")
+                }
             }
             .navigationTitle(recipie.name)
         }

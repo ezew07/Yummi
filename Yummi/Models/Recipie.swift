@@ -21,11 +21,10 @@ struct Recipie {
         """
     }
     let imageURL: String
-    
     #if DEBUG
     static let exampleRecipies: [Recipie] = [
-        Recipie(name: "Kefta", ingredients: Ingredients.examples[1], isFavourite: false, rating: 2, imageURL: "https://images.unsplash.com/photo-1540100716001-4b432820e37f"),
-        Recipie(name: "Jollof", ingredients: Ingredients.examples[2], isFavourite: true, rating: 5, imageURL: "https://unsplash.com/photos/person-holding-black-ceramic-bowl-with-rice-Qtd5z7g4thc"),
+        Recipie(name: "Kefta", ingredients: Ingredients.examples[1], isFavourite: false, rating: 2, imageURL: "https://images.unsplash.com/photo-1604908177453-7462950a6a3b"),
+        Recipie(name: "Jollof", ingredients: Ingredients.examples[2], isFavourite: true, rating: 5, imageURL: "https://images.unsplash.com/photo-1540100716001-4b432820e37f"),
 
         ]
     #endif
