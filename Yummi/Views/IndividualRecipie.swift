@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct IndividualRecipie: View {
-    var recipie: Recipie
+    @State var recipie: Recipie
     
     var body: some View {
         NavigationStack{
@@ -26,6 +26,9 @@ struct IndividualRecipie: View {
                 }
                 Section("Info"){
                     Text("Rating: \(recipie.rating)/5")
+                    Toggle(isOn: $recipie.isFavourite){
+                        Text("Favourite \(String(recipie.isFavourite))")
+                    }
                 }
             }
             .navigationTitle(recipie.name)
