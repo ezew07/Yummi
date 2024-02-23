@@ -8,10 +8,10 @@
 import Foundation
 
 class StateController: ObservableObject {
-    @Published var recipie: [Recipie]
+    @Published var recipies: [Recipie]
     
     init() {
-        recipie = Recipie.exampleRecipies
+        recipies = Recipie.exampleRecipies
     }
 }
 

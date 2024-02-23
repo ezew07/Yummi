@@ -12,6 +12,7 @@ struct YummiApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .environmentObject(StateController())
         }
     }
 }

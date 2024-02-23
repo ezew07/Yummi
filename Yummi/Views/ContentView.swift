@@ -8,39 +8,23 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State private var selectedTab: Tab = .ingredientView
     var body: some View {
         
-        selectedTab.view
-        
-        HStack(spacing: 80){
-            Button(action:{
-                selectedTab = .ingredientView
-            }, label: {
-                VStack{
+        TabView{
+            IngredientView(examples: Ingredients.examples)
+                .tabItem{
                     Image(systemName: "fork.knife")
-                        .resizable()
-                        .frame(width: 20, height: 20)
                     Text("Ingredients")
                 }
-                    .foregroundColor(selectedTab == .ingredientView ? .blue : .gray)
-            })
-            Button(action: {
-                selectedTab = .recipieView
-            }, label: {
-                VStack{
+            RecipieView()
+                .tabItem{
                     Image(systemName: "book.fill")
-                        .resizable()
-                        .frame(width: 20, height: 20)
-                    Text("Recipies")
+                    Text("Ingredients")
                 }
-                    .foregroundColor(selectedTab == .recipieView ? .blue : .gray)
-            })
-
         }
-        .padding(.top, 13)
     }
 }
 #Preview {
     ContentView()
+        .environmentObject(StateController())
 }

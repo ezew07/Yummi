@@ -15,17 +15,3 @@ enum Category: String, CaseIterable {
     case Proteins = "Proteins"
     case Drinks = "Drinks"
 }
-
-enum Tab {
-    case ingredientView
-    case recipieView
-    
-    var view: some View {
-        switch self {
-        case .ingredientView:
-            return AnyView(IngredientView(examples: Ingredients.examples))
-        case .recipieView:
-            return AnyView(RecipieView())
-        }
-    }
-}

@@ -7,7 +7,7 @@
 
 import Foundation
 
-func findRecipieInde(in data: [Recipie], name target: String) -> Int{
+func findRecipieIndex(in data: [Recipie], name target: String) -> Int{
     for index in 0...(data.count-1){
         if data[index].name == target{
             return index

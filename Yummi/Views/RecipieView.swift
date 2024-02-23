@@ -10,11 +10,11 @@
 import SwiftUI
 
 struct RecipieView: View {
-    
+    @EnvironmentObject var state: StateController
     var body: some View {
         NavigationStack{
             List{
-                ForEach(Recipie.exampleRecipies, id: \.name) {recipies in
+                ForEach(state.recipies, id: \.name) {recipies in
                     NavigationLink(destination: IndividualRecipie(recipie: recipies)) {
                         if recipies.isFavourite{
                             Image(systemName: "star.fill")
@@ -34,4 +34,5 @@ struct RecipieView: View {
 
 #Preview {
     RecipieView()
+        .environmentObject(StateController())
 }

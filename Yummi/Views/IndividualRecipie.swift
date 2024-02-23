@@ -8,8 +8,9 @@
 import SwiftUI
 
 struct IndividualRecipie: View {
+    @EnvironmentObject var state: StateController
     @State var recipie: Recipie
-    
+
     var body: some View {
         NavigationStack{
             Form{
@@ -27,7 +28,11 @@ struct IndividualRecipie: View {
                 Section("Info"){
                     Text("Rating: \(recipie.rating)/5")
                     Toggle(isOn: $recipie.isFavourite){
-                        Text("Favourite \(String(recipie.isFavourite))")
+                        Text("Favourite")
+                    }
+                    .onChange(of: recipie.isFavourite) { oldValue, newValue in
+                        state.recipies[
+                        findRecipieIndex(in: state.recipies, name: recipie.name)] = recipie
                     }
                 }
             }
@@ -38,4 +43,5 @@ struct IndividualRecipie: View {
 
 #Preview {
     IndividualRecipie(recipie: Recipie.exampleRecipies[0])
+        .environmentObject(StateController())
 }
