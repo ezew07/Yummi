@@ -11,6 +11,7 @@ import SwiftUI
 
 struct RecipieView: View {
     @EnvironmentObject var state: StateController
+    @State var toggleCreateRecipie: Bool = false
     var body: some View {
         NavigationStack{
             List{
@@ -31,6 +32,17 @@ struct RecipieView: View {
                 })
             }
             .navigationTitle("Recipes")
+            .toolbar{
+                ToolbarItem(placement: .principal){
+                    Button(action: {toggleCreateRecipie.toggle()}){
+                        Image(systemName: "plus.square.fill.on.square.fill")
+                    }
+                }
+            }
+            .sheet(isPresented: $toggleCreateRecipie) {
+                CreateRecipieView()
+            }
+            
         }
     }
 }

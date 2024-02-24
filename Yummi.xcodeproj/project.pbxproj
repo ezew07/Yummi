@@ -23,6 +23,7 @@
 		F073F9462B78F58E0087CC4C /* Recipie.swift in Sources */ = {isa = PBXBuildFile; fileRef = F073F9452B78F58E0087CC4C /* Recipie.swift */; };
 		F0CCAE8D2B88F8D800390AF0 /* StateController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0CCAE8C2B88F8D800390AF0 /* StateController.swift */; };
 		F0CCAE902B88FBC600390AF0 /* Functions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0CCAE8F2B88FBC600390AF0 /* Functions.swift */; };
+		F0CCAE942B89FCCD00390AF0 /* CreateRecipieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0CCAE932B89FCCD00390AF0 /* CreateRecipieView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +62,7 @@
 		F073F9452B78F58E0087CC4C /* Recipie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recipie.swift; sourceTree = "<group>"; };
 		F0CCAE8C2B88F8D800390AF0 /* StateController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateController.swift; sourceTree = "<group>"; };
 		F0CCAE8F2B88FBC600390AF0 /* Functions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Functions.swift; sourceTree = "<group>"; };
+		F0CCAE932B89FCCD00390AF0 /* CreateRecipieView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateRecipieView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -164,6 +166,7 @@
 				D9A5F90A2B73F16A00DE9EF6 /* RecipieView.swift */,
 				F0025E002B80E28C00967D6C /* IngredientView.swift */,
 				D9179B712B88A82D002E594D /* IndividualRecipie.swift */,
+				F0CCAE932B89FCCD00390AF0 /* CreateRecipieView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -313,6 +316,7 @@
 				D92BBFA72B692D6800ACFFC3 /* Enumerations.swift in Sources */,
 				F0CCAE8D2B88F8D800390AF0 /* StateController.swift in Sources */,
 				D9179B722B88A82D002E594D /* IndividualRecipie.swift in Sources */,
+				F0CCAE942B89FCCD00390AF0 /* CreateRecipieView.swift in Sources */,
 				F0025E012B80E28C00967D6C /* IngredientView.swift in Sources */,
 				D924FC532B5FEF48003F2182 /* Ingredient.swift in Sources */,
 				F073F9462B78F58E0087CC4C /* Recipie.swift in Sources */,
