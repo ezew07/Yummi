@@ -23,8 +23,12 @@ struct IndividualRecipie: View {
                     }
                 }
                 Section("Ingredients"){
-                    Text("\(recipie.displayInfo)")
-                }
+                    VStack(alignment: .leading){
+                        ForEach(recipie.ingredients, id: \.name){ ingredient in
+                                Text("\(ingredient.name)")
+                            }
+                    }
+            }
                 Section("Info"){
                     HStack{
                         Stepper(value: $recipie.rating, in: 0...5){

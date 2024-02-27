@@ -52,7 +52,7 @@ struct IngredientView: View {
                             
                         }
                     })
-                    DatePicker("Expiry Date", selection: $newIngredientExpiryDate)
+                    DatePicker("Expiry Date", selection: $newIngredientExpiryDate, displayedComponents: .date)
                     Button(action: {
                         examples.append(Ingredients(name: newIngredientName, quantity: newIngredientQuantity, unit: newIngredientUnit, category: newIngredientCategory, expiryDate: newIngredientExpiryDate))
                     }) {
