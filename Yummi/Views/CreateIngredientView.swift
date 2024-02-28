@@ -31,14 +31,18 @@ struct CreateIngredientView: View {
                     }
                 })
                 DatePicker("Expiry Date", selection: $newInventoryIngredientExpiryDate, displayedComponents: .date)
-                Button(action: {
-                    state.inventoryIngredient.append(InventoryIngredient(ingredient: Ingredient(name: newInventoryIngredientName, quantity: newInventoryIngredientQuantity, unit: newInventoryIngredientUnit, category: newInventoryIngredientCategory), expiryDate: newInventoryIngredientExpiryDate))
-                    toggleCreateIngredient = false
-                }) {
-                    Label("Make Ingredient", systemImage: "plus.square.on.square")
-                }
             }
             .navigationTitle("Create ingredient")
+            .toolbar{
+                ToolbarItem(placement: .topBarTrailing){
+                    Button(action: {
+                        state.inventoryIngredient.append(InventoryIngredient(ingredient: Ingredient(name: newInventoryIngredientName, quantity: newInventoryIngredientQuantity, unit: newInventoryIngredientUnit, category: newInventoryIngredientCategory), expiryDate: newInventoryIngredientExpiryDate))
+                        toggleCreateIngredient = false
+                    }) {
+                        Image(systemName: "plus.square.on.square")
+                    }
+                }
+            }
         }
     }
 }
