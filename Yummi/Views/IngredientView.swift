@@ -12,7 +12,7 @@ func getDate(year: Int, month: Int, day: Int, hour: Int, minute: Int) -> Date{
 }
 
 struct IngredientView: View {
-    @State var examples: [Ingredients]
+    @State var examples: [Ingredient]
     @State private var selectedIngredient = 0 {
         didSet{
             if selectedIngredient > examples.count - 1{
@@ -28,42 +28,44 @@ struct IngredientView: View {
     @State private var intCheck = 0
     
     var body: some View {
-        Form {
-            Section("Information"){
-                VStack(alignment: .leading, spacing: 20) {
-                    Text("\(examples[selectedIngredient].displayInfo)")
-                    Button("Next ingredient", action: {
-                        selectedIngredient += 1
-                    })
-                }
-                .padding()
-            }
-            Section("Create a new ingredient"){
-                Section{
-                    TextField("Ingredient name", text: $newIngredientName)
-                    HStack{
-                        TextField("Quantity", value: $newIngredientQuantity, formatter: NumberFormatter())
-                            .keyboardType(.numberPad)
-                        TextField("Unit", value: $newIngredientUnit, formatter: NumberFormatter())
+        NavigationStack {
+            Form {
+                Section("Information"){
+                    VStack(alignment: .leading, spacing: 20) {
+                        Text("\(examples[selectedIngredient].displayInfo)")
+                        Button("Next ingredient", action: {
+                            selectedIngredient += 1
+                        })
                     }
-                    Picker("Category", selection: $newIngredientCategory, content: {
-                        ForEach(Category.allCases, id: \.self){ newIngredientCategory in
-                            Text(newIngredientCategory.rawValue)
-                            
+                }
+                Section("Create a new ingredient"){
+                    Section{
+                        TextField("Ingredient name", text: $newIngredientName)
+                        HStack{
+                            TextField("Quantity", value: $newIngredientQuantity, formatter: NumberFormatter())
+                                .keyboardType(.numberPad)
+                            TextField("Unit", value: $newIngredientUnit, formatter: NumberFormatter())
                         }
-                    })
-                    DatePicker("Expiry Date", selection: $newIngredientExpiryDate, displayedComponents: .date)
-                    Button(action: {
-                        examples.append(Ingredients(name: newIngredientName, quantity: newIngredientQuantity, unit: newIngredientUnit, category: newIngredientCategory, expiryDate: newIngredientExpiryDate))
-                    }) {
-                        Label("Make Ingredient", systemImage: "plus.square.on.square")
+                        Picker("Category", selection: $newIngredientCategory, content: {
+                            ForEach(Category.allCases, id: \.self){ newIngredientCategory in
+                                Text(newIngredientCategory.rawValue)
+                                
+                            }
+                        })
+                        DatePicker("Expiry Date", selection: $newIngredientExpiryDate, displayedComponents: .date)
+                        Button(action: {
+                            examples.append(Ingredient(name: newIngredientName, quantity: newIngredientQuantity, unit: newIngredientUnit, category: newIngredientCategory, expiryDate: newIngredientExpiryDate))
+                        }) {
+                            Label("Make Ingredient", systemImage: "plus.square.on.square")
+                        }
                     }
                 }
             }
+            .navigationTitle("Inventory")
         }
     }
 }
 
 #Preview {
-    IngredientView(examples: Ingredients.examples)
+    IngredientView(examples: Ingredient.examples)
 }

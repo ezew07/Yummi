@@ -24,6 +24,7 @@
 		F0CCAE8D2B88F8D800390AF0 /* StateController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0CCAE8C2B88F8D800390AF0 /* StateController.swift */; };
 		F0CCAE902B88FBC600390AF0 /* Functions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0CCAE8F2B88FBC600390AF0 /* Functions.swift */; };
 		F0CCAE942B89FCCD00390AF0 /* CreateRecipieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0CCAE932B89FCCD00390AF0 /* CreateRecipieView.swift */; };
+		F0CCAEA62B8E639100390AF0 /* InventoryIngredient.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0CCAEA52B8E639100390AF0 /* InventoryIngredient.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +64,7 @@
 		F0CCAE8C2B88F8D800390AF0 /* StateController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateController.swift; sourceTree = "<group>"; };
 		F0CCAE8F2B88FBC600390AF0 /* Functions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Functions.swift; sourceTree = "<group>"; };
 		F0CCAE932B89FCCD00390AF0 /* CreateRecipieView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateRecipieView.swift; sourceTree = "<group>"; };
+		F0CCAEA52B8E639100390AF0 /* InventoryIngredient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InventoryIngredient.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -155,6 +157,7 @@
 				D924FC522B5FEF48003F2182 /* Ingredient.swift */,
 				D92BBFA62B692D6800ACFFC3 /* Enumerations.swift */,
 				F073F9452B78F58E0087CC4C /* Recipie.swift */,
+				F0CCAEA52B8E639100390AF0 /* InventoryIngredient.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -312,6 +315,7 @@
 				D924FC2B2B5FEDD1003F2182 /* ContentView.swift in Sources */,
 				D9A5F90B2B73F16A00DE9EF6 /* RecipieView.swift in Sources */,
 				D924FC292B5FEDD1003F2182 /* YummiApp.swift in Sources */,
+				F0CCAEA62B8E639100390AF0 /* InventoryIngredient.swift in Sources */,
 				F0CCAE902B88FBC600390AF0 /* Functions.swift in Sources */,
 				D92BBFA72B692D6800ACFFC3 /* Enumerations.swift in Sources */,
 				F0CCAE8D2B88F8D800390AF0 /* StateController.swift in Sources */,

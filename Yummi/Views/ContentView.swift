@@ -9,9 +9,8 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        
         TabView{
-            IngredientView(examples: Ingredients.examples)
+            IngredientView(examples: Ingredient.examples)
                 .tabItem{
                     Image(systemName: "fork.knife")
                     Text("Ingredients")
