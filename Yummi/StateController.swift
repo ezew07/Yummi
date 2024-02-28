@@ -9,9 +9,13 @@ import Foundation
 
 class StateController: ObservableObject {
     @Published var recipies: [Recipie]
+    @Published var inventoryIngredient: [InventoryIngredient]
+    @Published var ingredient: [Ingredient]
     
     init() {
         recipies = Recipie.exampleRecipies
+        inventoryIngredient = InventoryIngredient.examples
+        ingredient = Ingredient.examples
     }
 }
 

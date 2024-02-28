@@ -7,24 +7,21 @@
 
 import SwiftUI
 
-func getDate(year: Int, month: Int, day: Int, hour: Int, minute: Int) -> Date{
-    return Calendar.current.date(from: DateComponents(calendar: Calendar.current, year: year, month: month, day: day, hour: hour, minute: minute))!
-}
 
 struct IngredientView: View {
-    @State var examples: [Ingredient]
+    @EnvironmentObject var state: StateController
     @State private var selectedIngredient = 0 {
         didSet{
-            if selectedIngredient > examples.count - 1{
+            if selectedIngredient > state.inventoryIngredient.count - 1{
                 selectedIngredient = 0
             }
         }
     }
-    @State private var newIngredientName = ""
-    @State private var newIngredientQuantity = Int()
-    @State private var newIngredientUnit = String()
-    @State private var newIngredientCategory: Category  = .defaultCategory
-    @State private var newIngredientExpiryDate = Date()
+    @State private var newInventoryIngredientName = ""
+    @State private var newInventoryIngredientQuantity = Int()
+    @State private var newInventoryIngredientUnit = String()
+    @State private var newInventoryIngredientCategory: Category  = .defaultCategory
+    @State private var newInventoryIngredientExpiryDate = Date()
     @State private var intCheck = 0
     
     var body: some View {
@@ -32,7 +29,7 @@ struct IngredientView: View {
             Form {
                 Section("Information"){
                     VStack(alignment: .leading, spacing: 20) {
-                        Text("\(examples[selectedIngredient].displayInfo)")
+                        Text("\(state.inventoryIngredient[selectedIngredient].displayInfo)")
                         Button("Next ingredient", action: {
                             selectedIngredient += 1
                         })
@@ -40,21 +37,21 @@ struct IngredientView: View {
                 }
                 Section("Create a new ingredient"){
                     Section{
-                        TextField("Ingredient name", text: $newIngredientName)
+                        TextField("Ingredient name", text: $newInventoryIngredientName)
                         HStack{
-                            TextField("Quantity", value: $newIngredientQuantity, formatter: NumberFormatter())
+                            TextField("Quantity", value: $newInventoryIngredientQuantity, formatter: NumberFormatter())
                                 .keyboardType(.numberPad)
-                            TextField("Unit", value: $newIngredientUnit, formatter: NumberFormatter())
+                            TextField("Unit", value: $newInventoryIngredientUnit, formatter: NumberFormatter())
                         }
-                        Picker("Category", selection: $newIngredientCategory, content: {
+                        Picker("Category", selection: $newInventoryIngredientCategory, content: {
                             ForEach(Category.allCases, id: \.self){ newIngredientCategory in
                                 Text(newIngredientCategory.rawValue)
                                 
                             }
                         })
-                        DatePicker("Expiry Date", selection: $newIngredientExpiryDate, displayedComponents: .date)
+                        DatePicker("Expiry Date", selection: $newInventoryIngredientExpiryDate, displayedComponents: .date)
                         Button(action: {
-                            examples.append(Ingredient(name: newIngredientName, quantity: newIngredientQuantity, unit: newIngredientUnit, category: newIngredientCategory, expiryDate: newIngredientExpiryDate))
+                            state.inventoryIngredient.append(InventoryIngredient(ingredient: Ingredient(name: newInventoryIngredientName, quantity: newInventoryIngredientQuantity, unit: newInventoryIngredientUnit, category: newInventoryIngredientCategory), expiryDate: newInventoryIngredientExpiryDate))
                         }) {
                             Label("Make Ingredient", systemImage: "plus.square.on.square")
                         }
@@ -67,5 +64,6 @@ struct IngredientView: View {
 }
 
 #Preview {
-    IngredientView(examples: Ingredient.examples)
+    IngredientView()
+        .environmentObject(StateController())
 }
