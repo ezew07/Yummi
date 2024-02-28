@@ -17,11 +17,7 @@ struct IngredientView: View {
             }
         }
     }
-    @State private var newInventoryIngredientName = ""
-    @State private var newInventoryIngredientQuantity = Int()
-    @State private var newInventoryIngredientUnit = String()
-    @State private var newInventoryIngredientCategory: Category  = .defaultCategory
-    @State private var newInventoryIngredientExpiryDate = Date()
+    @State var toggleCreateIngredient: Bool = false
     @State private var intCheck = 0
     
     var body: some View {
@@ -35,31 +31,22 @@ struct IngredientView: View {
                         })
                     }
                 }
-                Section("Create a new ingredient"){
-                    Section{
-                        TextField("Ingredient name", text: $newInventoryIngredientName)
-                        HStack{
-                            TextField("Quantity", value: $newInventoryIngredientQuantity, formatter: NumberFormatter())
-                                .keyboardType(.numberPad)
-                            TextField("Unit", value: $newInventoryIngredientUnit, formatter: NumberFormatter())
-                        }
-                        Picker("Category", selection: $newInventoryIngredientCategory, content: {
-                            ForEach(Category.allCases, id: \.self){ newIngredientCategory in
-                                Text(newIngredientCategory.rawValue)
-                                
-                            }
-                        })
-                        DatePicker("Expiry Date", selection: $newInventoryIngredientExpiryDate, displayedComponents: .date)
-                        Button(action: {
-                            state.inventoryIngredient.append(InventoryIngredient(ingredient: Ingredient(name: newInventoryIngredientName, quantity: newInventoryIngredientQuantity, unit: newInventoryIngredientUnit, category: newInventoryIngredientCategory), expiryDate: newInventoryIngredientExpiryDate))
-                        }) {
-                            Label("Make Ingredient", systemImage: "plus.square.on.square")
-                        }
+            }
+            .navigationTitle("Inventory")
+            .sheet(isPresented: $toggleCreateIngredient){
+                CreateIngredientView(toggleCreateIngredient: $toggleCreateIngredient)
+            }
+            .toolbar{
+                ToolbarItem(placement: .principal){
+                    Button(action: {toggleCreateIngredient.toggle()}){
+                        Image(systemName: "plus.square.fill.on.square.fill")
                     }
                 }
             }
-            .navigationTitle("Inventory")
+            
+            
         }
+
     }
 }
 

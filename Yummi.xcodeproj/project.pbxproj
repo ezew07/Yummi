@@ -25,6 +25,7 @@
 		F0CCAE902B88FBC600390AF0 /* Functions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0CCAE8F2B88FBC600390AF0 /* Functions.swift */; };
 		F0CCAE942B89FCCD00390AF0 /* CreateRecipieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0CCAE932B89FCCD00390AF0 /* CreateRecipieView.swift */; };
 		F0CCAEA62B8E639100390AF0 /* InventoryIngredient.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0CCAEA52B8E639100390AF0 /* InventoryIngredient.swift */; };
+		F0CCAEA82B8F636900390AF0 /* CreateIngredientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0CCAEA72B8F636900390AF0 /* CreateIngredientView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +66,7 @@
 		F0CCAE8F2B88FBC600390AF0 /* Functions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Functions.swift; sourceTree = "<group>"; };
 		F0CCAE932B89FCCD00390AF0 /* CreateRecipieView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateRecipieView.swift; sourceTree = "<group>"; };
 		F0CCAEA52B8E639100390AF0 /* InventoryIngredient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InventoryIngredient.swift; sourceTree = "<group>"; };
+		F0CCAEA72B8F636900390AF0 /* CreateIngredientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateIngredientView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -170,6 +172,7 @@
 				F0025E002B80E28C00967D6C /* IngredientView.swift */,
 				D9179B712B88A82D002E594D /* IndividualRecipie.swift */,
 				F0CCAE932B89FCCD00390AF0 /* CreateRecipieView.swift */,
+				F0CCAEA72B8F636900390AF0 /* CreateIngredientView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -320,6 +323,7 @@
 				D92BBFA72B692D6800ACFFC3 /* Enumerations.swift in Sources */,
 				F0CCAE8D2B88F8D800390AF0 /* StateController.swift in Sources */,
 				D9179B722B88A82D002E594D /* IndividualRecipie.swift in Sources */,
+				F0CCAEA82B8F636900390AF0 /* CreateIngredientView.swift in Sources */,
 				F0CCAE942B89FCCD00390AF0 /* CreateRecipieView.swift in Sources */,
 				F0025E012B80E28C00967D6C /* IngredientView.swift in Sources */,
 				D924FC532B5FEF48003F2182 /* Ingredient.swift in Sources */,
