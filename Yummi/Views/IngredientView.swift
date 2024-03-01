@@ -9,36 +9,27 @@ import SwiftUI
 
 
 struct IngredientView: View {
-    @EnvironmentObject var state: StateController
-    @State private var selectedIngredient = 0 {
-        didSet{
-            if selectedIngredient > state.inventoryIngredient.count - 1{
-                selectedIngredient = 0
-            }
-        }
-    }
-    @State var toggleCreateIngredient: Bool = false
-    @State private var intCheck = 0
-    
+    @ObservedObject var shared = IngredientViewModel.shared
+
     var body: some View {
         NavigationStack {
             Form {
                 Section("Information"){
                     VStack(alignment: .leading, spacing: 20) {
-                        Text("\(state.inventoryIngredient[selectedIngredient].displayInfo)")
+                        Text("\(shared.inventoryIngredient[shared.selectedIngredient].displayInfo)")
                         Button("Next ingredient", action: {
-                            selectedIngredient += 1
+                            shared.selectedIngredient += 1
                         })
                     }
                 }
             }
             .navigationTitle("Inventory")
-            .sheet(isPresented: $toggleCreateIngredient){
-                CreateIngredientView(toggleCreateIngredient: $toggleCreateIngredient)
+            .sheet(isPresented: $shared.toggleCreateIngredient){
+                CreateIngredientView()
             }
             .toolbar{
                 ToolbarItem(placement: .principal){
-                    Button(action: {toggleCreateIngredient.toggle()}){
+                    Button(action: {shared.toggleCreateIngredient.toggle()}){
                         Image(systemName: "plus.square.fill.on.square.fill")
                     }
                 }
@@ -52,5 +43,4 @@ struct IngredientView: View {
 
 #Preview {
     IngredientView()
-        .environmentObject(StateController())
 }

@@ -11,6 +11,9 @@ import SwiftUI
 
 struct RecipieView: View {
     @EnvironmentObject var state: StateController
+    @ObservedObject var shared = RecipieViewModel.shared
+    
+    
     @State var toggleCreateRecipie: Bool = false
     var body: some View {
         NavigationStack{
