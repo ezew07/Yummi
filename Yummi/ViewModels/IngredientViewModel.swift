@@ -12,7 +12,6 @@ class IngredientViewModel: ObservableObject {
     static let shared = IngredientViewModel()
     private init() {}
     
-    @Published var recipies: [Recipie] = Recipie.exampleRecipies
     @Published var inventoryIngredient: [InventoryIngredient] = InventoryIngredient.examples
     @Published var ingredient: [Ingredient] =  Ingredient.examples
     

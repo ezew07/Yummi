@@ -29,6 +29,7 @@
 		F0CCAE942B89FCCD00390AF0 /* CreateRecipieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0CCAE932B89FCCD00390AF0 /* CreateRecipieView.swift */; };
 		F0CCAEA62B8E639100390AF0 /* InventoryIngredient.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0CCAEA52B8E639100390AF0 /* InventoryIngredient.swift */; };
 		F0CCAEA82B8F636900390AF0 /* CreateIngredientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0CCAEA72B8F636900390AF0 /* CreateIngredientView.swift */; };
+		F0CCAEAA2B91F4BC00390AF0 /* IndividualRecipieViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0CCAEA92B91F4BC00390AF0 /* IndividualRecipieViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,6 +74,7 @@
 		F0CCAE932B89FCCD00390AF0 /* CreateRecipieView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateRecipieView.swift; sourceTree = "<group>"; };
 		F0CCAEA52B8E639100390AF0 /* InventoryIngredient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InventoryIngredient.swift; sourceTree = "<group>"; };
 		F0CCAEA72B8F636900390AF0 /* CreateIngredientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateIngredientView.swift; sourceTree = "<group>"; };
+		F0CCAEA92B91F4BC00390AF0 /* IndividualRecipieViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndividualRecipieViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -166,6 +168,7 @@
 				D9259D052B91E4AC000D7D83 /* IngredientViewModel.swift */,
 				D9B8D4822B91EC3000C7C072 /* CreateIngredientViewModel.swift */,
 				D9B8D4842B91F15D00C7C072 /* RecipieViewModel.swift */,
+				F0CCAEA92B91F4BC00390AF0 /* IndividualRecipieViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -336,6 +339,7 @@
 				D9A5F90B2B73F16A00DE9EF6 /* RecipieView.swift in Sources */,
 				D924FC292B5FEDD1003F2182 /* YummiApp.swift in Sources */,
 				D9259D062B91E4AC000D7D83 /* IngredientViewModel.swift in Sources */,
+				F0CCAEAA2B91F4BC00390AF0 /* IndividualRecipieViewModel.swift in Sources */,
 				F0CCAEA62B8E639100390AF0 /* InventoryIngredient.swift in Sources */,
 				F0CCAE902B88FBC600390AF0 /* Functions.swift in Sources */,
 				D92BBFA72B692D6800ACFFC3 /* Enumerations.swift in Sources */,

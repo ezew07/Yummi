@@ -9,6 +9,8 @@ import SwiftUI
 
 struct IndividualRecipie: View {
     @EnvironmentObject var state: StateController
+    @ObservedObject var shared = IndividualRecipieViewModel.shared
+    
     @State var recipie: Recipie
 
     var body: some View {

@@ -10,15 +10,14 @@
 import SwiftUI
 
 struct RecipieView: View {
-    @EnvironmentObject var state: StateController
     @ObservedObject var shared = RecipieViewModel.shared
     
     
-    @State var toggleCreateRecipie: Bool = false
+    
     var body: some View {
         NavigationStack{
             List{
-                ForEach(state.recipies, id: \.name) {recipies in
+                ForEach(shared.recipies, id: \.name) {recipies in
                     NavigationLink(destination: IndividualRecipie(recipie: recipies)) {
                         if recipies.isFavourite{
                             Image(systemName: "star.fill")
@@ -31,18 +30,18 @@ struct RecipieView: View {
                     }
                 }
                 .onDelete(perform: { indexSet in
-                    state.recipies.remove(atOffsets: indexSet)
+                    shared.recipies.remove(atOffsets: indexSet)
                 })
             }
             .navigationTitle("Recipes")
             .toolbar{
                 ToolbarItem(placement: .principal){
-                    Button(action: {toggleCreateRecipie.toggle()}){
+                    Button(action: {shared.toggleCreateRecipie.toggle()}){
                         Image(systemName: "plus.square.fill.on.square.fill")
                     }
                 }
             }
-            .sheet(isPresented: $toggleCreateRecipie) {
+            .sheet(isPresented: $shared.toggleCreateRecipie) {
                 CreateRecipieView()
             }
             
@@ -52,5 +51,4 @@ struct RecipieView: View {
 
 #Preview {
     RecipieView()
-        .environmentObject(StateController())
 }

@@ -12,7 +12,9 @@ class RecipieViewModel: ObservableObject {
     static let shared = RecipieViewModel()
     private init() {}
     
-    
+    @Published var recipies: [Recipie] = Recipie.exampleRecipies
+    @Published var toggleCreateRecipie: Bool = false
+
     
 }
     
