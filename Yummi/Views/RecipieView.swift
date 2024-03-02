@@ -19,14 +19,33 @@ struct RecipieView: View {
             List{
                 ForEach(shared.recipies, id: \.name) {recipies in
                     NavigationLink(destination: IndividualRecipie(recipie: recipies)) {
+                        HStack{
+                            AsyncImage(url: URL(string: recipies.imageURL)){ image in
+                                image.resizable().frame(width: 60, height: 50, alignment: .leading)
+                                
+                            } placeholder: {
+                                ProgressView()
+                            }
+                            
+                        }
+                        
+                        VStack(alignment: .leading){
+                            Text("\(recipies.name)")
+                            HStack{
+                                ForEach(0..<recipies.rating, id: \.self){ _ in
+                                    Image(systemName: "star.fill")
+                                        .foregroundStyle(.yellow)
+                                    
+                                }
+                            }
+                        }
                         if recipies.isFavourite{
-                            Image(systemName: "star.fill")
-                                .foregroundStyle(.yellow)
+                            Image(systemName: "heart.fill")
+                                .foregroundStyle(.red)
                         }
                         else{
-                            Image(systemName: "star")
+                            Image(systemName: "heart")
                         }
-                        Text("\(recipies.name)")
                     }
                 }
                 .onDelete(perform: { indexSet in

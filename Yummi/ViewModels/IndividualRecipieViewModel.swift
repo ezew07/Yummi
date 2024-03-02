@@ -12,4 +12,6 @@ class IndividualRecipieViewModel: ObservableObject{
     static let shared = IndividualRecipieViewModel()
     private init() {}
     
+    
+    
 }
