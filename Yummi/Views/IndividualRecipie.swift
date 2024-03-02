@@ -8,8 +8,7 @@
 import SwiftUI
 
 struct IndividualRecipie: View {
-    @EnvironmentObject var state: StateController
-    @ObservedObject var shared = IndividualRecipieViewModel.shared
+    @ObservedObject var shared = RecipieViewModel.shared
     
     @State var recipie: Recipie
 
@@ -27,26 +26,23 @@ struct IndividualRecipie: View {
                 Section("Ingredients"){
                     VStack(alignment: .leading){
                         ForEach(recipie.ingredients, id: \.name){ ingredient in
-                                Text("\(ingredient.name)")
-                            }
+                            Text("\(ingredient.name)")
+                        }
                     }
-            }
+                }
                 Section("Info"){
-                    HStack{
-                        Stepper(value: $recipie.rating, in: 0...5){
-                            Text("Rating: \(recipie.rating)/5")
-                        }
-                            .onChange(of: recipie.rating) {
-                            state.recipies[
-                            findRecipieIndex(in: state.recipies, name: recipie.name)] = recipie
-                        }
+                    Stepper(value: $recipie.rating, in: 0...5){
+                        Text("Rating: \(recipie.rating)/5")
+                    }
+                    .onChange(of: recipie.rating){
+                        shared.recipies[findRecipieIndex(in: shared.recipies, name: recipie.name)] = recipie
                     }
                     Toggle(isOn: $recipie.isFavourite){
                         Text("Favourite")
-                    }
-                    .onChange(of: recipie.isFavourite) {
-                        state.recipies[
-                        findRecipieIndex(in: state.recipies, name: recipie.name)] = recipie
+                            .onChange(of: recipie.isFavourite) {
+                                shared.recipies[
+                                    findRecipieIndex(in: shared.recipies, name: recipie.name)] = recipie
+                            }
                     }
                 }
             }
@@ -57,5 +53,4 @@ struct IndividualRecipie: View {
 
 #Preview {
     IndividualRecipie(recipie: Recipie.exampleRecipies[0])
-        .environmentObject(StateController())
 }

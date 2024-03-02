@@ -17,32 +17,31 @@ struct RecipieView: View {
     var body: some View {
         NavigationStack{
             List{
-                ForEach(shared.recipies, id: \.name) {recipies in
-                    NavigationLink(destination: IndividualRecipie(recipie: recipies)) {
+                ForEach(shared.recipies, id: \.name) {recipie in
+                    NavigationLink(destination: IndividualRecipie(recipie: recipie)) {
                         HStack{
-                            if recipies.isFavourite{
+                            if recipie.isFavourite{
                                 Image(systemName: "heart.fill")
                                     .foregroundStyle(.red)
                             }
                             else{
                                 Image(systemName: "heart")
                             }
-                            AsyncImage(url: URL(string: recipies.imageURL)){ image in
+                            AsyncImage(url: URL(string: recipie.imageURL)){ image in
                                 image.resizable().frame(width: 60, height: 50, alignment: .leading)
                                 
                             } placeholder: {
                                 ProgressView()
                             }
-                            
                         }
                         VStack(alignment: .leading){
-                            Text("\(recipies.name)")
+                            Text("\(recipie.name)")
                             HStack{
-                                ForEach(0..<recipies.rating, id: \.self){ _ in
+                                ForEach(0..<recipie.rating, id: \.self){ _ in
                                     Image(systemName: "star.fill")
                                         .foregroundStyle(.yellow)
                                 }
-                                ForEach(0..<5-recipies.rating, id: \.self){ _ in
+                                ForEach(0..<5-recipie.rating, id: \.self){ _ in
                                     Image(systemName: "star")
                                 }
 
