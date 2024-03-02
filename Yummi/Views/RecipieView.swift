@@ -61,31 +61,32 @@ struct RecipieView: View {
                             }
                         }
                     }
+                    .swipeActions(edge: .trailing){
+                        Button(role: .destructive, action: {}){
+                            Image(systemName: "trash")
+                        }
+                    }
                     .swipeActions(edge: .leading){
                         Button(action: {shared.recipies[findRecipieIndex(in: shared.recipies, name: recipie.name)].isFavourite.toggle()
                         }){
                             Image(systemName: "heart")
                         }
+                        .tint(recipie.isFavourite ? .gray : .pink)
+                    
                     }
-                }
-
-                .swipeActions(edge: .trailing){
-                    Button(role: .destructive, action: {}){
-                        Image(systemName: "trash")
-                    }
-                }
-                .navigationTitle("Recipes")
-                .toolbar{
-                    ToolbarItem(placement: .principal){
-                        Button(action: {shared.toggleCreateRecipie.toggle()}){
-                            Image(systemName: "plus.square.fill.on.square.fill")
+                    .navigationTitle("Recipes")
+                    .toolbar{
+                        ToolbarItem(placement: .principal){
+                            Button(action: {shared.toggleCreateRecipie.toggle()}){
+                                Image(systemName: "plus.square.fill.on.square.fill")
+                            }
                         }
                     }
+                    .sheet(isPresented: $shared.toggleCreateRecipie) {
+                        CreateRecipieView()
+                    }
+                    
                 }
-                .sheet(isPresented: $shared.toggleCreateRecipie) {
-                    CreateRecipieView()
-                }
-                
             }
         }
     }
