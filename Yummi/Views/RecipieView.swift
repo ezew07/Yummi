@@ -5,20 +5,6 @@
 //  Created by Eze, William (IRG) on 07/02/2024.
 //
 
-
-//.onDelete(perform: { indexSet in
-//    shared.recipies.remove(atOffsets: indexSet)
-//})
-
-//                    .swipeActions(edge: .leading, allowsFullSwipe: true) {
-//                        Button(action:{
-//                            shared.recipies[findRecipieIndex(in: shared.recipies, name: recipie.name)].isFavourite.toggle()
-//                            shared.updateRecipie(with: recipie)
-//                        }){
-//                            Image(systemName: "heart")
-//                        }
-//                    }
-
 import SwiftUI
 
 struct RecipieView: View {
