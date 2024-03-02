@@ -35,14 +35,13 @@ struct IndividualRecipie: View {
                         Text("Rating: \(recipie.rating)/5")
                     }
                     .onChange(of: recipie.rating){
-                        shared.recipies[findRecipieIndex(in: shared.recipies, name: recipie.name)] = recipie
+                        shared.updateRecipie(with: recipie)
                     }
                     Toggle(isOn: $recipie.isFavourite){
                         Text("Favourite")
-                            .onChange(of: recipie.isFavourite) {
-                                shared.recipies[
-                                    findRecipieIndex(in: shared.recipies, name: recipie.name)] = recipie
-                            }
+                    }
+                    .onChange(of: recipie.isFavourite) {
+                        shared.updateRecipie(with: recipie)
                     }
                 }
             }
