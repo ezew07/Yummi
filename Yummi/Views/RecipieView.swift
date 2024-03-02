@@ -6,13 +6,23 @@
 //
 
 
+//.onDelete(perform: { indexSet in
+//    shared.recipies.remove(atOffsets: indexSet)
+//})
+
+//                    .swipeActions(edge: .leading, allowsFullSwipe: true) {
+//                        Button(action:{
+//                            shared.recipies[findRecipieIndex(in: shared.recipies, name: recipie.name)].isFavourite.toggle()
+//                            shared.updateRecipie(with: recipie)
+//                        }){
+//                            Image(systemName: "heart")
+//                        }
+//                    }
 
 import SwiftUI
 
 struct RecipieView: View {
     @ObservedObject var shared = RecipieViewModel.shared
-    
-    
     
     var body: some View {
         NavigationStack{
@@ -27,44 +37,56 @@ struct RecipieView: View {
                             else{
                                 Image(systemName: "heart")
                             }
-                            AsyncImage(url: URL(string: recipie.imageURL)){ image in
-                                image.resizable().frame(width: 60, height: 50, alignment: .leading)
-                                
-                            } placeholder: {
-                                ProgressView()
-                            }
-                        }
-                        VStack(alignment: .leading){
-                            Text("\(recipie.name)")
+                            
                             HStack{
-                                ForEach(0..<recipie.rating, id: \.self){ _ in
-                                    Image(systemName: "star.fill")
-                                        .foregroundStyle(.yellow)
+                                AsyncImage(url: URL(string: recipie.imageURL)){ image in
+                                    image.resizable().frame(width: 60, height: 50, alignment: .leading)
+                                    
+                                } placeholder: {
+                                    ProgressView()
                                 }
-                                ForEach(0..<5-recipie.rating, id: \.self){ _ in
-                                    Image(systemName: "star")
+                            }
+                            VStack(alignment: .leading){
+                                Text("\(recipie.name)")
+                                HStack{
+                                    ForEach(0..<recipie.rating, id: \.self){ _ in
+                                        Image(systemName: "star.fill")
+                                            .foregroundStyle(.yellow)
+                                    }
+                                    ForEach(0..<5-recipie.rating, id: \.self){ _ in
+                                        Image(systemName: "star")
+                                    }
+                                    
                                 }
-
                             }
                         }
                     }
-                }
-                .onDelete(perform: { indexSet in
-                    shared.recipies.remove(atOffsets: indexSet)
-                })
-            }
-            .navigationTitle("Recipes")
-            .toolbar{
-                ToolbarItem(placement: .principal){
-                    Button(action: {shared.toggleCreateRecipie.toggle()}){
-                        Image(systemName: "plus.square.fill.on.square.fill")
+                    .swipeActions(edge: .leading){
+                        Button(action: {shared.recipies[findRecipieIndex(in: shared.recipies, name: recipie.name)].isFavourite.toggle()
+                        }){
+                            Image(systemName: "heart")
+                        }
                     }
                 }
+
+                .swipeActions(edge: .trailing){
+                    Button(role: .destructive, action: {}){
+                        Image(systemName: "trash")
+                    }
+                }
+                .navigationTitle("Recipes")
+                .toolbar{
+                    ToolbarItem(placement: .principal){
+                        Button(action: {shared.toggleCreateRecipie.toggle()}){
+                            Image(systemName: "plus.square.fill.on.square.fill")
+                        }
+                    }
+                }
+                .sheet(isPresented: $shared.toggleCreateRecipie) {
+                    CreateRecipieView()
+                }
+                
             }
-            .sheet(isPresented: $shared.toggleCreateRecipie) {
-                CreateRecipieView()
-            }
-            
         }
     }
 }
