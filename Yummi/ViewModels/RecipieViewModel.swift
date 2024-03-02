@@ -14,7 +14,15 @@ class RecipieViewModel: ObservableObject {
     
     @Published var recipies: [Recipie] = Recipie.exampleRecipies
     @Published var toggleCreateRecipie: Bool = false
-
+    @Published var searchTextPlaceholder = ""
+    var searchResults: [Recipie] {
+        if searchTextPlaceholder.isEmpty {
+            return recipies
+        } else {
+            return recipies.filter { $0.name.contains(searchTextPlaceholder) }
+        }
+    }
+    
     func updateRecipie(with newRecipie: Recipie){
         recipies[findRecipieIndex(in: recipies, name: newRecipie.name)] = newRecipie
     }

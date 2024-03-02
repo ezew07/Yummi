@@ -13,7 +13,7 @@ struct RecipieView: View {
     var body: some View {
         NavigationStack{
             List{
-                ForEach(shared.recipies, id: \.name) {recipie in
+                ForEach(shared.searchResults, id: \.name) {recipie in
                     NavigationLink(destination: IndividualRecipie(recipie: recipie)) {
                         HStack{
                             if recipie.isFavourite{
@@ -75,6 +75,7 @@ struct RecipieView: View {
                 }
             }
         }
+        .searchable(text: $shared.searchTextPlaceholder, isPresented: .constant(true))
     }
 }
 
