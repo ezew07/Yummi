@@ -26,7 +26,7 @@ struct RecipieView: View {
                             
                             HStack{
                                 AsyncImage(url: URL(string: recipie.imageURL)){ image in
-                                    image.resizable().frame(width: 60, height: 50, alignment: .leading)
+                                    image.resizable().frame(width: 90, height: 75, alignment: .leading)
                                     
                                 } placeholder: {
                                     ProgressView()
@@ -34,6 +34,7 @@ struct RecipieView: View {
                             }
                             VStack(alignment: .leading){
                                 Text("\(recipie.name)")
+                                    .frame(maxWidth: .infinity, alignment: .leading)
                                 HStack{
                                     ForEach(0..<recipie.rating, id: \.self){ _ in
                                         Image(systemName: "star.fill")
