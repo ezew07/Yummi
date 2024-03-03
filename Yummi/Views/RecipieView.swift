@@ -5,6 +5,15 @@
 //  Created by Eze, William (IRG) on 07/02/2024.
 //
 
+
+//                                AsyncImage(url: URL(string: recipie.imageURL)){ image in
+//                                    image.resizable().frame(width: 90, height: 75, alignment: .leading)
+//
+//                                } placeholder: {
+//                                    ProgressView()
+//                                }
+
+
 import SwiftUI
 
 struct RecipieView: View {
@@ -25,12 +34,9 @@ struct RecipieView: View {
                             }
                             
                             HStack{
-                                AsyncImage(url: URL(string: recipie.imageURL)){ image in
-                                    image.resizable().frame(width: 90, height: 75, alignment: .leading)
-                                    
-                                } placeholder: {
-                                    ProgressView()
-                                }
+                                Image("\(recipie.name.lowercased())")
+                                    .resizable()
+                                    .frame(width: 90, height: 75, alignment: .leading)
                             }
                             VStack(alignment: .leading){
                                 Text("\(recipie.name)")

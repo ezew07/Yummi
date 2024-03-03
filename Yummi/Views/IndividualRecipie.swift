@@ -16,12 +16,9 @@ struct IndividualRecipie: View {
         NavigationStack{
             Form{
                 Section("Image"){
-                    AsyncImage(url: URL(string: recipie.imageURL)){ image in
-                        image.resizable().aspectRatio(contentMode: .fit)
-                        
-                    } placeholder: {
-                        ProgressView()
-                    }
+                    Image(recipie.name.lowercased())
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
                 }
                 Section("Ingredients"){
                     VStack(alignment: .leading){
