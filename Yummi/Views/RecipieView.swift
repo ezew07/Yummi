@@ -40,6 +40,9 @@ struct RecipieView: View {
                             }
                             VStack(alignment: .leading){
                                 Text("\(recipie.name)")
+                                    .font(.system(size: 18))
+                                Text("Serves \(recipie.servings)")
+                                    .font(.system(size: 13))
                                     .frame(maxWidth: .infinity, alignment: .leading)
                                 HStack{
                                     ForEach(0..<recipie.rating, id: \.self){ _ in
