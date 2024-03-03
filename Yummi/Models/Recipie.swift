@@ -12,6 +12,7 @@ struct Recipie {
     let ingredients: [Ingredient]
     var isFavourite: Bool
     var rating: Int
+    var steps: [String]
     var displayInfo: String {
         """
         Name: \(self.name)
@@ -21,8 +22,8 @@ struct Recipie {
     }
     #if DEBUG
     static let exampleRecipies: [Recipie] = [
-        Recipie(name: "Kefta", ingredients: Ingredient.examples, isFavourite: false, rating: 2),
-        Recipie(name: "Jollof", ingredients: Ingredient.examples, isFavourite: true, rating: 5),
+        Recipie(name: "Kefta", ingredients: Ingredient.examples, isFavourite: false, rating: 2, steps: ["Gather ingredients", "Mix the meat and seasonings", "Form the kefta", "Cook the kefta", "Serve the kefta"]),
+        Recipie(name: "Jollof", ingredients: Ingredient.examples, isFavourite: true, rating: 5, steps: ["Prepare the ingredients", "Parboil the rice", "Make the Jollof sauce", "Cook the rice", "Serve and garnish"])
         ]
     #endif
     

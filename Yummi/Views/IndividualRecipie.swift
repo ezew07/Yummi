@@ -41,6 +41,13 @@ struct IndividualRecipie: View {
                         shared.updateRecipie(with: recipie)
                     }
                 }
+                Section("Instructions"){
+                    VStack(alignment: .leading){
+                        ForEach(0..<recipie.steps.count, id: \.self){ step in
+                            Text("\(step+1). \(recipie.steps[step])")
+                        }
+                    }
+                }
             }
             .navigationTitle(recipie.name)
         }
