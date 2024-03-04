@@ -18,27 +18,33 @@ import SwiftUI
 
 struct IngredientView: View {
     @ObservedObject var shared = IngredientViewModel.shared
-
+    
     var body: some View {
         NavigationStack {
-            List(shared.inventoryIngredient, id: \.ingredient.name){ ingredient in
-                VStack(alignment: .leading) {
-                    HStack(alignment: .center){
-                        Text(ingredient.ingredient.name)
-                            .font(.system(size: 23))
-                        Text("")
-                        Text(ingredient.ingredient.category.rawValue)
-                            .foregroundStyle(.gray)
-                    }
-                    HStack{
-                        Text("\(ingredient.ingredient.quantity) \(ingredient.ingredient.unit)")
-                        Text("•")
-                        Text(ingredient.expiryDate.formatted(date: .abbreviated, time: .omitted))
-                            .foregroundStyle(Color(red: 0.9412, green: 0.4902, blue: 0.4745))
+            List{
+                ForEach(shared.inventoryIngredient, id: \.ingredient.name) {ingredient in
+                    VStack(alignment: .leading) {
+                        HStack(alignment: .center){
+                            Text(ingredient.ingredient.name)
+                                .font(.system(size: 23))
+                            Text("")
+                            Text(ingredient.ingredient.category.rawValue)
+                                .foregroundStyle(.gray)
+                        }
+                        HStack{
+                            Text("\(ingredient.ingredient.quantity) \(ingredient.ingredient.unit)")
+                            Text("•")
+                            Text(ingredient.expiryDate.formatted(date: .abbreviated, time: .omitted))
+                                .foregroundStyle(Color(red: 0.9412, green: 0.4902, blue: 0.4745))
+                        }
                     }
                 }
+                .onDelete(perform: { indexSet in
+                    shared.inventoryIngredient.remove(atOffsets: indexSet)
+                })
             }
-        
+            
+            
             .navigationTitle("Inventory")
             .sheet(isPresented: $shared.toggleCreateIngredient){
                 CreateIngredientView()
@@ -50,10 +56,7 @@ struct IngredientView: View {
                     }
                 }
             }
-            
-            
         }
-
     }
 }
 
