@@ -84,8 +84,9 @@ struct RecipieView: View {
                     
                 }
             }
+            .searchable(text: $shared.searchTextPlaceholder, isPresented: .constant(true))
+            .autocorrectionDisabled()
         }
-        .searchable(text: $shared.searchTextPlaceholder, isPresented: .constant(true))
     }
 }
 

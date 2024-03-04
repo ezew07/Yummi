@@ -20,13 +20,6 @@ struct IndividualRecipie: View {
                         .resizable()
                         .aspectRatio(contentMode: .fit)
                 }
-                Section("Ingredients"){
-                    VStack(alignment: .leading){
-                        ForEach(recipie.ingredients, id: \.name){ ingredient in
-                            Text("\(ingredient.name)")
-                        }
-                    }
-                }
                 Section("Info"){
                     Stepper(value: $recipie.rating, in: 0...5){
                         Text("Rating: \(recipie.rating)/5")
@@ -34,11 +27,24 @@ struct IndividualRecipie: View {
                     .onChange(of: recipie.rating){
                         shared.updateRecipie(with: recipie)
                     }
+                    Stepper(value: $recipie.servings){
+                        Text("Servings: \(recipie.servings)")
+                    }
+                    .onChange(of: recipie.servings){
+                        shared.updateRecipie(with: recipie)
+                    }
                     Toggle(isOn: $recipie.isFavourite){
                         Text("Favourite")
                     }
                     .onChange(of: recipie.isFavourite) {
                         shared.updateRecipie(with: recipie)
+                    }
+                }
+                Section("Ingredients"){
+                    VStack(alignment: .leading){
+                        ForEach(recipie.ingredients, id: \.name){ ingredient in
+                            Text("\(ingredient.name)")
+                        }
                     }
                 }
                 Section("Instructions"){

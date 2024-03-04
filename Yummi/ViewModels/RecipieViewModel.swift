@@ -19,7 +19,7 @@ class RecipieViewModel: ObservableObject {
         if searchTextPlaceholder.isEmpty {
             return recipies
         } else {
-            return recipies.filter { $0.name.contains(searchTextPlaceholder) }
+            return recipies.filter { $0.name.localizedCaseInsensitiveContains(searchTextPlaceholder) }
         }
     }
     
