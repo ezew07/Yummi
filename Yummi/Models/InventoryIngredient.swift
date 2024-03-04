@@ -14,8 +14,7 @@ struct InventoryIngredient {
     var displayInfo: String {
         return """
         Name: \(self.ingredient.name)
-        Quantity: \(self.ingredient.quantity)
-        Unit: \(self.ingredient.unit)
+        Quantity: \(self.ingredient.quantity) \(self.ingredient.unit)
         Category: \(self.ingredient.category.rawValue)
         Expiry Date: \(self.expiryDate.formatted(date: .abbreviated, time: .omitted))
         """
