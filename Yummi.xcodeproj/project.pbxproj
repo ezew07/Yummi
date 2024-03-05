@@ -19,6 +19,7 @@
 		D924FC542B5FEF48003F2182 /* Ingredient.swift in Sources */ = {isa = PBXBuildFile; fileRef = D924FC522B5FEF48003F2182 /* Ingredient.swift */; };
 		D9259D062B91E4AC000D7D83 /* IngredientViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9259D052B91E4AC000D7D83 /* IngredientViewModel.swift */; };
 		D92BBFA72B692D6800ACFFC3 /* Enumerations.swift in Sources */ = {isa = PBXBuildFile; fileRef = D92BBFA62B692D6800ACFFC3 /* Enumerations.swift */; };
+		D97600F02B974DE100523994 /* RecipieIngredient.swift in Sources */ = {isa = PBXBuildFile; fileRef = D97600EF2B974DE100523994 /* RecipieIngredient.swift */; };
 		D9A5F90B2B73F16A00DE9EF6 /* RecipieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9A5F90A2B73F16A00DE9EF6 /* RecipieView.swift */; };
 		D9B8D4832B91EC3000C7C072 /* CreateIngredientViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9B8D4822B91EC3000C7C072 /* CreateIngredientViewModel.swift */; };
 		D9B8D4852B91F15D00C7C072 /* RecipieViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9B8D4842B91F15D00C7C072 /* RecipieViewModel.swift */; };
@@ -63,6 +64,7 @@
 		D924FC522B5FEF48003F2182 /* Ingredient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ingredient.swift; sourceTree = "<group>"; };
 		D9259D052B91E4AC000D7D83 /* IngredientViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientViewModel.swift; sourceTree = "<group>"; };
 		D92BBFA62B692D6800ACFFC3 /* Enumerations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enumerations.swift; sourceTree = "<group>"; };
+		D97600EF2B974DE100523994 /* RecipieIngredient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipieIngredient.swift; sourceTree = "<group>"; };
 		D9A5F90A2B73F16A00DE9EF6 /* RecipieView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipieView.swift; sourceTree = "<group>"; };
 		D9B8D4822B91EC3000C7C072 /* CreateIngredientViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateIngredientViewModel.swift; sourceTree = "<group>"; };
 		D9B8D4842B91F15D00C7C072 /* RecipieViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipieViewModel.swift; sourceTree = "<group>"; };
@@ -177,6 +179,7 @@
 				D92BBFA62B692D6800ACFFC3 /* Enumerations.swift */,
 				F073F9452B78F58E0087CC4C /* Recipie.swift */,
 				F0CCAEA52B8E639100390AF0 /* InventoryIngredient.swift */,
+				D97600EF2B974DE100523994 /* RecipieIngredient.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -342,6 +345,7 @@
 				D9B8D4832B91EC3000C7C072 /* CreateIngredientViewModel.swift in Sources */,
 				F0CCAE8D2B88F8D800390AF0 /* StateController.swift in Sources */,
 				D9179B722B88A82D002E594D /* IndividualRecipie.swift in Sources */,
+				D97600F02B974DE100523994 /* RecipieIngredient.swift in Sources */,
 				F0CCAEA82B8F636900390AF0 /* CreateIngredientView.swift in Sources */,
 				F0CCAE942B89FCCD00390AF0 /* CreateRecipieView.swift in Sources */,
 				F0025E012B80E28C00967D6C /* IngredientView.swift in Sources */,

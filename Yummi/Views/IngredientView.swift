@@ -32,7 +32,7 @@ struct IngredientView: View {
                                 .foregroundStyle(.gray)
                         }
                         HStack{
-                            Text("\(ingredient.ingredient.quantity) \(ingredient.ingredient.unit)")
+                            Text("\(ingredient.inventoryQuantity) \(ingredient.ingredient.unit)")
                             Text("•")
                             Text(ingredient.expiryDate.formatted(date: .abbreviated, time: .omitted))
                                 .foregroundStyle(Color(red: 0.9412, green: 0.4902, blue: 0.4745))

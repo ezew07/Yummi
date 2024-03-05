@@ -19,7 +19,7 @@ class CreateIngredientViewModel: ObservableObject{
     @Published var newInventoryIngredientExpiryDate = Date()
 
     func createInventoryIngredient(){
-        IngredientViewModel.shared.inventoryIngredient.append(InventoryIngredient(ingredient: Ingredient(name: newInventoryIngredientName, quantity: newInventoryIngredientQuantity, unit: newInventoryIngredientUnit, category: newInventoryIngredientCategory), expiryDate: newInventoryIngredientExpiryDate))
+        IngredientViewModel.shared.inventoryIngredient.append(InventoryIngredient(ingredient: Ingredient(name: newInventoryIngredientName, unit: newInventoryIngredientUnit, category: newInventoryIngredientCategory), expiryDate: newInventoryIngredientExpiryDate, inventoryQuantity: newInventoryIngredientQuantity))
         IngredientViewModel.shared.toggleCreateIngredient = false
 
     }

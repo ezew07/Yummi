@@ -16,7 +16,7 @@ struct IndividualRecipie: View {
         NavigationStack{
             Form{
                 Section("Image"){
-                    Image(recipie.name.lowercased())
+                    Image(recipie.name)
                         .resizable()
                         .aspectRatio(contentMode: .fit)
                 }
@@ -42,8 +42,8 @@ struct IndividualRecipie: View {
                 }
                 Section("Ingredients"){
                     VStack(alignment: .leading){
-                        ForEach(recipie.ingredients, id: \.name){ ingredient in
-                            Text("\(ingredient.name)")
+                        ForEach(recipie.ingredients, id: \.ingredient.name){ ingredient in
+                            Text("\(ingredient.recipieQuantity) \(ingredient.ingredient.unit) of \(ingredient.ingredient.name)")
                         }
                     }
                 }

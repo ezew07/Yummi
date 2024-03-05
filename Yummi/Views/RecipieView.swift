@@ -34,7 +34,7 @@ struct RecipieView: View {
                             }
                             
                             HStack{
-                                Image("\(recipie.name.lowercased())")
+                                Image("\(recipie.name)")
                                     .resizable()
                                     .frame(width: 90, height: 75, alignment: .leading)
                             }
