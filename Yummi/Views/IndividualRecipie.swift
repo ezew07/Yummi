@@ -5,6 +5,11 @@
 //  Created by Eze, William (IRG) on 23/02/2024.
 //
 
+
+//ForEach(recipie.ingredients, id: \.ingredient.name){ ingredient in
+//    Text("\(ingredient.recipieQuantity) \(ingredient.ingredient.unit) of \(ingredient.ingredient.name)")
+//}
+
 import SwiftUI
 
 struct IndividualRecipie: View {
@@ -27,11 +32,12 @@ struct IndividualRecipie: View {
                     .onChange(of: recipie.rating){
                         shared.updateRecipie(with: recipie)
                     }
-                    Stepper(value: $recipie.servings){
+                    Stepper(value: $recipie.servings, in: 1...50){
                         Text("Servings: \(recipie.servings)")
                     }
-                    .onChange(of: recipie.servings){
+                    .onChange(of: recipie.servings){ oldValue, newValue in
                         shared.updateRecipie(with: recipie)
+                        shared.updateIngredientQuantity(for: recipie, old: oldValue, new: newValue)
                     }
                     Toggle(isOn: $recipie.isFavourite){
                         Text("Favourite")

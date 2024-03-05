@@ -27,6 +27,13 @@ class RecipieViewModel: ObservableObject {
         recipies[findRecipieIndex(in: recipies, name: newRecipie.name)] = newRecipie
     }
     
+    func updateIngredientQuantity(for recipie: Recipie, old current: Int, new desired: Int){
+        let conversionFactor = desired/current
+        for i in 0..<recipies[findRecipieIndex(in: recipies, name: recipie.name)].ingredients.count{
+            recipies[findRecipieIndex(in: recipies, name: recipie.name)].ingredients[i].recipieQuantity *= conversionFactor
+        }
+    }
+    
 }
     
     
