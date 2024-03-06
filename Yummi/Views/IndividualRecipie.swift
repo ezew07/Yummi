@@ -37,7 +37,7 @@ struct IndividualRecipie: View {
                     }
                     .onChange(of: recipie.servings){ oldValue, newValue in
                         shared.updateRecipie(with: recipie)
-                        shared.updateIngredientQuantity(for: recipie, old: oldValue, new: newValue)
+                        shared.updateIngredientQuantity(for: recipie, current: oldValue, desired: newValue)
                     }
                     Toggle(isOn: $recipie.isFavourite){
                         Text("Favourite")
