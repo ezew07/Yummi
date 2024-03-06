@@ -9,7 +9,7 @@ import Foundation
 
 struct RecipieIngredient {
     var ingredient: Ingredient
-    var recipieQuantity: Int
+    var recipieQuantity: Float
     
     
     #if DEBUG
