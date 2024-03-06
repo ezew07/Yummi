@@ -49,7 +49,7 @@ struct IndividualRecipie: View {
                 Section("Ingredients"){
                     VStack(alignment: .leading){
                         ForEach(recipie.ingredients, id: \.ingredient.name){ ingredient in
-                            Text("\(ingredient.recipieQuantity) \(ingredient.ingredient.unit) of \(ingredient.ingredient.name)")
+                            Text("\(String(format: "%.1f", ingredient.recipieQuantity)) \(ingredient.ingredient.unit) of \(ingredient.ingredient.name)")
                         }
                     }
                 }

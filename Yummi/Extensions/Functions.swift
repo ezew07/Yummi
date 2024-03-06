@@ -20,7 +20,7 @@ func getDate(year: Int, month: Int, day: Int, hour: Int, minute: Int) -> Date{
     return Calendar.current.date(from: DateComponents(calendar: Calendar.current, year: year, month: month, day: day, hour: hour, minute: minute))!
 }
 
-func round(_ number: Double, places decimalPlaces: Int) -> Double {
-    let multiplier = pow(10.0, Double(decimalPlaces))
+func round(_ number: Float, places decimalPlaces: Int) -> Float {
+    let multiplier = pow(10.0, Float(decimalPlaces))
     return round(number * multiplier) / multiplier
 }
