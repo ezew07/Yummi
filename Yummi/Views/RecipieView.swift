@@ -58,7 +58,9 @@ struct RecipieView: View {
                         }
                     }
                     .swipeActions(edge: .trailing){
-                        Button(role: .destructive, action: {}){
+                        Button(role: .destructive, action: {
+                            shared.deleteRecipie(recipie)
+                        }){
                             Image(systemName: "trash")
                         }
                     }
@@ -70,18 +72,18 @@ struct RecipieView: View {
                         .tint(recipie.isFavourite ? .gray : .pink)
                     
                     }
-                    .navigationTitle("Recipes")
-                    .toolbar{
-                        ToolbarItem(placement: .principal){
-                            Button(action: {shared.toggleCreateRecipie.toggle()}){
-                                Image(systemName: "plus.square.fill.on.square.fill")
-                            }
-                        }
-                    }
                     .sheet(isPresented: $shared.toggleCreateRecipie) {
                         CreateRecipieView()
                     }
                     
+                }
+            }
+            .navigationTitle("Recipes")
+            .toolbar{
+                ToolbarItem(placement: .principal){
+                    Button(action: {shared.toggleCreateRecipie.toggle()}){
+                        Image(systemName: "plus.square.fill.on.square.fill")
+                    }
                 }
             }
             .searchable(text: $shared.searchTextPlaceholder, isPresented: .constant(true))

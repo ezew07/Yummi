@@ -16,6 +16,15 @@ func findRecipieIndex(in data: [Recipie], name target: String) -> Int{
     return 0
 }
 
+func findInventoryIngredientIndex(in data: [InventoryIngredient], name target: String) -> Int{
+    for index in 0...(data.count-1){
+        if data[index].ingredient.name == target{
+            return index
+        }
+    }
+    return 0
+}
+
 func getDate(year: Int, month: Int, day: Int, hour: Int, minute: Int) -> Date{
     return Calendar.current.date(from: DateComponents(calendar: Calendar.current, year: year, month: month, day: day, hour: hour, minute: minute))!
 }

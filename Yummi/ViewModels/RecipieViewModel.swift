@@ -34,4 +34,9 @@ class RecipieViewModel: ObservableObject {
         }
         return modifiedRecipie
     }
+    
+    func deleteRecipie(_ subject: Recipie){
+        recipies.remove(at: findRecipieIndex(in: recipies, name: subject.name))
+    }
+    
 }

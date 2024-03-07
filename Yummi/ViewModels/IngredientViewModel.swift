@@ -24,5 +24,8 @@ class IngredientViewModel: ObservableObject {
     }
     @Published var toggleCreateIngredient: Bool = false
 
+    func deleteInventoryIngredient(_ subject: InventoryIngredient){
+        inventoryIngredient.remove(at: findInventoryIngredientIndex(in: inventoryIngredient, name: subject.ingredient.name))
+    }
     
 }

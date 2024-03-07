@@ -38,10 +38,14 @@ struct IngredientView: View {
                                 .foregroundStyle(Color(red: 0.9412, green: 0.4902, blue: 0.4745))
                         }
                     }
+                    .swipeActions(edge: .trailing){
+                        Button(role: .destructive, action: {
+                            shared.deleteInventoryIngredient(ingredient)
+                        }){
+                            Image(systemName: "trash")
+                        }
+                    }
                 }
-                .onDelete(perform: { indexSet in
-                    shared.inventoryIngredient.remove(atOffsets: indexSet)
-                })
             }
             
             
