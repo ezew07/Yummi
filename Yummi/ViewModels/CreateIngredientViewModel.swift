@@ -14,7 +14,7 @@ class CreateIngredientViewModel: ObservableObject{
     
     @Published var newInventoryIngredientName = ""
     @Published var newInventoryIngredientQuantity = Int()
-    @Published var newInventoryIngredientUnit = ""
+    @Published var newInventoryIngredientUnit: Unit = .defaultUnit
     @Published var newInventoryIngredientCategory: Category = .defaultCategory
     @Published var newInventoryIngredientExpiryDate = Date()
 

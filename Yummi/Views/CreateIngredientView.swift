@@ -17,7 +17,12 @@ struct CreateIngredientView: View {
                 HStack{
                     TextField("Quantity", value: $shared.newInventoryIngredientQuantity, formatter: NumberFormatter())
                         .keyboardType(.numberPad)
-                    TextField("Unit", text: $shared.newInventoryIngredientUnit)
+                    Picker("Unit", selection: $shared.newInventoryIngredientUnit, content: {
+                        ForEach(Unit.allCases, id: \.self){ newIngredientUnit in
+                            Text(newIngredientUnit.rawValue)
+                            
+                        }
+                    })
                 }
                 Picker("Category", selection: $shared.newInventoryIngredientCategory, content: {
                     ForEach(Category.allCases, id: \.self){ newIngredientCategory in

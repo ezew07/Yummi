@@ -35,5 +35,3 @@ class RecipieViewModel: ObservableObject {
         return modifiedRecipie
     }
 }
-    
-    

@@ -9,7 +9,7 @@ import Foundation
 
 struct Ingredient {
     let name: String
-    var unit: String
+    var unit: Unit
     var category: Category
     
     var displayInfo: String {
@@ -22,10 +22,10 @@ struct Ingredient {
     
     #if DEBUG
     static let examples: [Ingredient] = [
-        Ingredient(name: "Bread", unit: "loaves", category: Category.Carbohydrate),
-        Ingredient(name: "Egg", unit: "dozens", category: Category.Proteins),
-        Ingredient(name: "Wheat", unit: "kg", category: Category.Carbohydrate),
-        Ingredient(name: "Beef", unit: "kg", category: Category.Proteins)
+        Ingredient(name: "Bread", unit: .loaves, category: .carbohydrate),
+        Ingredient(name: "Egg", unit: .dozens, category: .proteins),
+        Ingredient(name: "Wheat", unit: .kilograms, category: .carbohydrate),
+        Ingredient(name: "Beef", unit: .kilograms, category: .proteins)
     ]
 
 
