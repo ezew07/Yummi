@@ -8,8 +8,24 @@
 import SwiftUI
 
 struct CreateRecipieView: View {
+    @ObservedObject var shared = CreateRecipieViewModel.shared
     var body: some View {
-        Text("Here will be a form to create a new recipie")
+        NavigationStack{
+            Form{
+                TextField("Name", text: $shared.newRecipieName)
+                NavigationLink(destination: IngredientsForNewRecipieView()){
+                    Text("Ingredients")
+                }
+                Toggle("Favourite", isOn: $shared.newRecipieIsFavourite)
+                Stepper(value: $shared.newRecipieRating, in: 0...5){
+                    Text("Rating: \(shared.newRecipieRating)/5")
+                }
+                Stepper(value: $shared.newRecipieServings, in: 1...50){
+                    Text("Servings: \(shared.newRecipieServings)")
+                }
+            }
+            .navigationTitle("Create recipie")
+        }
     }
 }
 

@@ -9,7 +9,7 @@ import Foundation
 import SwiftUI
 
 enum Category: String, CaseIterable {
-    case defaultCategory = "Choose a category"
+    case defaultCategory = ""
     case confectionary = "Confectionary"
     case carbohydrate = "Carbohydrate"
     case proteins = "Proteins"

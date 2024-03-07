@@ -8,8 +8,20 @@
 import SwiftUI
 
 struct IngredientsForNewRecipieView: View {
+    @ObservedObject var sharedIngredientVM = IngredientViewModel.shared
+    @ObservedObject var sharedRecipieVM = CreateRecipieViewModel.shared
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        List{
+            ForEach(sharedIngredientVM.ingredient, id: \.name){ ingredient in
+                MultipleSelectionRowView(title: ingredient.name, isSelected: sharedRecipieVM.selectedIngredients.contains { $0.name == ingredient.name}, ingredient: ingredient)
+                if sharedRecipieVM.selectedIngredients.contains(where: { $0.name == ingredient.name}) {
+                    HStack {
+                        TextField("Quantity", value: $sharedRecipieVM.newRecipieQuantity, formatter: NumberFormatter())
+                        Text("\(ingredient.unit.rawValue)")
+                    }
+                }
+            }
+        }
     }
 }
 

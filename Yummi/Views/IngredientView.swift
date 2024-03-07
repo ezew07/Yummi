@@ -49,7 +49,7 @@ struct IngredientView: View {
             }
             
             
-            .navigationTitle("Inventory")
+            .navigationTitle("Ingredients")
             .sheet(isPresented: $shared.toggleCreateIngredient){
                 CreateIngredientView()
             }
