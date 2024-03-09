@@ -33,7 +33,7 @@ struct CreateRecipieView: View {
                         Text("Instructions")
                         Spacer()
                         Text("\(shared.newRecipieInstructions.count)")
-                            .foregroundStyle(shared.selectedRecipieIngredients.count == 0 ? .red : .gray)
+                            .foregroundStyle(shared.newRecipieInstructions.count == 0 ? .red : .gray)
                     }
                 }
             }
