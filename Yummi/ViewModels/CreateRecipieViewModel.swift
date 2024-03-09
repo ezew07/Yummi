@@ -72,6 +72,7 @@ class CreateRecipieViewModel: ObservableObject{
     
     func createNewRecipie(){
         RecipieViewModel.shared.recipies.append(Recipie(name: newRecipieName, ingredients: selectedRecipieIngredients, isFavourite: newRecipieIsFavourite, rating: newRecipieRating, instructions: newRecipieInstructions, servings: newRecipieServings))
+        RecipieViewModel.shared.toggleCreateRecipie.toggle()
     }
     
 }
