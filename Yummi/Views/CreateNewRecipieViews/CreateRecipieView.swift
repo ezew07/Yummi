@@ -18,7 +18,7 @@ struct CreateRecipieView: View {
                         Text("Ingredients")
                         Spacer()
                         Text("\(shared.selectedRecipieIngredients.count)")
-                            .foregroundStyle(.gray)
+                            .foregroundStyle(shared.selectedRecipieIngredients.count == 0 ? .red : .gray)
                     }
                 }
                 Toggle("Favourite", isOn: $shared.newRecipieIsFavourite)
@@ -33,7 +33,7 @@ struct CreateRecipieView: View {
                         Text("Instructions")
                         Spacer()
                         Text("\(shared.newRecipieInstructions.count)")
-                            .foregroundStyle(.gray)
+                            .foregroundStyle(shared.selectedRecipieIngredients.count == 0 ? .red : .gray)
                     }
                 }
             }
