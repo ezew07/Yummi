@@ -28,6 +28,14 @@ struct CreateRecipieView: View {
                 }
             }
             .navigationTitle("Create recipie")
+            .toolbar {
+                ToolbarItem(placement: .topBarTrailing){
+                    Button(action: { shared.createNewRecipie() }) {
+                        Image(systemName: "plus.square.on.square")
+                    }
+                    .disabled(shared.allowedToCreateNewrecipie)
+                }
+            }
         }
     }
 }

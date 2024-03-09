@@ -21,6 +21,16 @@ class CreateRecipieViewModel: ObservableObject{
     @Published var newRecipieQuantity = 0
     @Published var newRecipieInstructions: [String] = []
     
+    var allowedToCreateNewrecipie: Bool {
+        if !newRecipieName.isEmpty && !selectedRecipieIngredients.isEmpty && !newRecipieInstructions.isEmpty{
+            return true
+        }
+        else{
+            return false
+        }
+        
+    }
+    
     func updateNewIngredientsState (_ subject:Ingredient){
         if selectedIngredients.contains(where: { $0.name == subject.name }){
             selectedIngredients.removeAll(where: { $0.name == subject.name })
@@ -60,8 +70,8 @@ class CreateRecipieViewModel: ObservableObject{
         newRecipieInstructions.remove(at: index)
     }
     
-//    func createNewRecipie(){
-//        RecipieViewModel.shared.recipies.append(Recipie(name: <#T##String#>, ingredients: [RecipieIngredients], isFavourite: <#T##Bool#>, rating: <#T##Int#>, steps: <#T##[String]#>, servings: <#T##Int#>))
-//    }
+    func createNewRecipie(){
+        RecipieViewModel.shared.recipies.append(Recipie(name: newRecipieName, ingredients: selectedRecipieIngredients, isFavourite: newRecipieIsFavourite, rating: newRecipieRating, instructions: newRecipieInstructions, servings: newRecipieServings))
+    }
     
 }
