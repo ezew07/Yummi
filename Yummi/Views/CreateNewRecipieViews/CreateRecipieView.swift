@@ -33,7 +33,7 @@ struct CreateRecipieView: View {
                     Button(action: { shared.createNewRecipie() }) {
                         Image(systemName: "plus.square.on.square")
                     }
-                    .disabled(shared.allowedToCreateNewrecipie)
+                    .disabled(!shared.allowedToCreateNewrecipie)
                 }
             }
         }
