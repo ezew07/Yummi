@@ -34,6 +34,7 @@ struct MultipleSelectionRowView: View {
                         .onChange(of: newRecipieIngredientQuantity){
                             shared.updateRecipieIngredientQuantity(RecipieIngredient(ingredient: ingredient, recipieQuantity: newRecipieIngredientQuantity))
                         }
+                        .keyboardType(.numberPad)
                     Text("\(ingredient.unit.rawValue)")
                 }
             }
