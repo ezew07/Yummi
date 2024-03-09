@@ -14,7 +14,12 @@ struct CreateRecipieView: View {
             Form{
                 TextField("Name", text: $shared.newRecipieName)
                 NavigationLink(destination: IngredientsForNewRecipieView()){
-                    Text("Ingredients")
+                    HStack {
+                        Text("Ingredients")
+                        Spacer()
+                        Text("\(shared.selectedRecipieIngredients.count)")
+                            .foregroundStyle(.gray)
+                    }
                 }
                 Toggle("Favourite", isOn: $shared.newRecipieIsFavourite)
                 Stepper(value: $shared.newRecipieRating, in: 0...5){
@@ -24,7 +29,12 @@ struct CreateRecipieView: View {
                     Text("Servings: \(shared.newRecipieServings)")
                 }
                 NavigationLink(destination: InstructionsView()){
-                    Text("Instructions")
+                    HStack {
+                        Text("Instructions")
+                        Spacer()
+                        Text("\(shared.newRecipieInstructions.count)")
+                            .foregroundStyle(.gray)
+                    }
                 }
             }
             .navigationTitle("Create recipie")
