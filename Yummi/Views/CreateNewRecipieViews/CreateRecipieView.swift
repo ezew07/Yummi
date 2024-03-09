@@ -28,6 +28,7 @@ struct CreateRecipieView: View {
                 }
             }
             .navigationTitle("Create recipie")
+            .navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 ToolbarItem(placement: .topBarTrailing){
                     Button(action: { shared.createNewRecipie() }) {

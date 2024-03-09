@@ -31,6 +31,7 @@ struct CreateIngredientView: View {
                 DatePicker("Expiry Date", selection: $shared.newInventoryIngredientExpiryDate, displayedComponents: .date)
             }
             .navigationTitle("Create ingredient")
+            .navigationBarTitleDisplayMode(.inline)
             .toolbar{
                 ToolbarItem(placement: .topBarTrailing){
                     Button(action: {
