@@ -23,6 +23,9 @@ struct CreateRecipieView: View {
                 Stepper(value: $shared.newRecipieServings, in: 1...50){
                     Text("Servings: \(shared.newRecipieServings)")
                 }
+                NavigationLink(destination: InstructionsView()){
+                    Text("Instructions")
+                }
             }
             .navigationTitle("Create recipie")
         }
