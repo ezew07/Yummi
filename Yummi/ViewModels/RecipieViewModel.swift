@@ -39,4 +39,7 @@ class RecipieViewModel: ObservableObject {
         recipies.remove(at: findRecipieIndex(in: recipies, name: subject.name))
     }
     
+     
+
+    
 }
