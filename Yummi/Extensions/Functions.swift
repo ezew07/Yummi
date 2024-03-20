@@ -52,3 +52,21 @@ func round(_ number: Float, places decimalPlaces: Int) -> Float {
     let multiplier = pow(10.0, Float(decimalPlaces))
     return round(number * multiplier) / multiplier
 }
+
+
+
+func getFilePath(filename: String) -> URL{
+    return FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0].appendingPathComponent(filename)
+}
+
+
+func loadFromFile<T: Codable>(filename: String, object: T) -> [T] {
+    if let loaded: [T] = FileManager.default.load(filename: filename){
+        return loaded
+    }
+    return []
+}
+
+func saveToFile<T: Codable>(filename: String, object: T) {
+    FileManager.default.save(filename: "\(filename).json", object: object)
+}

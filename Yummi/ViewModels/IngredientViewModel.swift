@@ -27,5 +27,5 @@ class IngredientViewModel: ObservableObject {
     func deleteInventoryIngredient(_ subject: InventoryIngredient){
         inventoryIngredient.remove(at: findInventoryIngredientIndex(in: inventoryIngredient, name: subject.ingredient.name))
     }
-    
+
 }
